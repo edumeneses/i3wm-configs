@@ -40,22 +40,22 @@ bindsym $mod+Shift+q kill
 exec --no-startup-id libinput-gestures-setup start
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+bindsym $mod+shift+space exec dmenu_run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 
 # dmenu alternative: rofi
 #bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-bindsym $mod+d exec rofi -show run
+#bindsym $mod+space exec rofi -show drun
 
 # loading COMPTON to add effects and transparency
-#exec_always compton -f
+exec_always compton -f
 
 # locking screen
-set $Locker i3lock && sleep 1
+set $Locker i3lock -i /home/edu/Pictures/illyria-default-blur.png -t && sleep 1
 
 bindsym $mod+x exec $Locker
 
@@ -123,10 +123,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -136,16 +136,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "0"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -178,9 +178,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Assign programs to workspaces
 assign [class="Chromium"] workspace $ws1
 for_window [class="^Chromium"] focus
-#assign [class="CXfce4-terminal"] workspace $ws2
-#for_window [class="CXfce4-terminal"] focus
-assign [class="Thunar"] workspace $ws10
+assign [class="Xfce4-terminal"] workspace $ws2
+for_window [class="Xfce4-terminal"] focus
+assign [class="Thunar"] workspace $ws3
 for_window [class="^Thunar"] focus
 
 #function keys shortcuts
@@ -269,7 +269,9 @@ bar {
 }
 
 #opening apps
+#exec --no-startup-id xfsettingsd --sm-client-disable &
 exec --no-startup-id /usr/bin/blueman-applet                # Bluetooth Manager
-exec --no-startup-id xautolock -time 5 -locker $Locker &   # Screen locker
+exec --no-startup-id xautolock -time 5 -locker $Locker &    # Screen locker
 exec --no-startup-id /usr/bin/nm-applet --sm-disable        # Network Manager
 exec --no-startup-id /usr/bin/xfce4-power-manager           # Power Manager
+exec --no-startup-id chromium
