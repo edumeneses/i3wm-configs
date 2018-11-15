@@ -9,8 +9,8 @@ sudo pacman -Sy i3 i3status i3blocks i3lock rofi ibus xautolock glances compton 
 
 ### Install Fonts
 
-- font Awesome (add link here)
-- font YosemiteSanFranciscoFont (add link here)
+- font Awesome (https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css)
+- font YosemiteSanFranciscoFont (https://github.com/supermarin/YosemiteSanFranciscoFont)
 
 ### theme
 
