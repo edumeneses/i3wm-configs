@@ -126,7 +126,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+d focus mode_toggle
+bindsym $mod+shift+d focus mode_toggle
+
+# start software manager (PAMAC)
+bindsym $mod+d exec pamac-manager
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -270,8 +273,10 @@ bar {
 
 #opening apps
 #exec --no-startup-id xfsettingsd --sm-client-disable &
-exec --no-startup-id /usr/bin/blueman-applet                # Bluetooth Manager
-exec --no-startup-id xautolock -time 5 -locker $Locker &    # Screen locker
-exec --no-startup-id /usr/bin/nm-applet --sm-disable        # Network Manager
-exec --no-startup-id /usr/bin/xfce4-power-manager           # Power Manager
+exec --no-startup-id /usr/bin/blueman-applet         			# Bluetooth Manager
+exec --no-startup-id xautolock -time 1 -corners --00 -locker $Locker &  # Screen locker
+exec --no-startup-id /usr/bin/nm-applet --sm-disable        		# Network Manager
+exec --no-startup-id volumeicon						# volume tray control
+exec --no-startup-id /usr/bin/xfce4-power-manager           		# Power Manager
 exec --no-startup-id chromium
+exec --no-startup-id parcellite						# clipboard manager
