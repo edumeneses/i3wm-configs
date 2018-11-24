@@ -242,17 +242,18 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $bg-color 	         #2f343f
+set $bar-color		 #3275c3
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $urgent-bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
+#			border			background		text			indicator	child_border
+client.focused		$bg-color		$bar-color		$text-color		$bar-color 	$bg-color
+client.unfocused	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bar-color
+client.focused_inactive	$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$bar-color
+client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		$bar-color
 
 # set "exit" menu
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
