@@ -14,7 +14,10 @@ sudo pacman -Sy i3 i3status i3blocks i3lock rofi ibus xautolock glances compton 
 
 ### theme
 
-Start with lxappearance and choose Dark Ark theme; then choose it in gtk-chtheme. In qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings.
+Start with lxappearance and choose Dark Ark theme; 
+Then choose it in gtk-chtheme;
+In qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings;
+Get back to lxappearance to set the icons.
 
 ### Set pamac-manager to work
 
