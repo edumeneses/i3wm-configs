@@ -1,5 +1,5 @@
 # i3wm-configs
-My personal config files and gude for personalize i3wm
+My personal config files and guide for personalize i3wm
 
 ### apps to install (over Manjaro xfce):
 
